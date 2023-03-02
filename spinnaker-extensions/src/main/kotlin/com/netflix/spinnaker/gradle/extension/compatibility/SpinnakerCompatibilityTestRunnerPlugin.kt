@@ -28,7 +28,7 @@ import org.gradle.api.Project
 import org.gradle.api.artifacts.Dependency
 import org.gradle.api.file.SourceDirectorySet
 import org.gradle.api.plugins.JavaPlugin
-import org.gradle.api.plugins.JavaPluginConvention
+//import org.gradle.api.plugins.JavaPluginConvention
 import org.gradle.api.tasks.SourceSet
 import org.gradle.api.tasks.SourceSetContainer
 import org.gradle.api.tasks.testing.Test
@@ -142,7 +142,8 @@ class SpinnakerCompatibilityTestRunnerPlugin : Plugin<Project> {
 }
 
 internal val Project.sourceSets: SourceSetContainer
-  get() = project.convention.getPlugin(JavaPluginConvention::class.java).sourceSets
+//  get() = project.convention.getPlugin(JavaPluginConvention::class.java).sourceSets
+  get() = project.sourceSets
 
 internal var Dependency.force: Boolean
   get() = withGroovyBuilder { getProperty("force") as Boolean }
